@@ -14,20 +14,20 @@ For our project we will use various models and research methods to decide if Bit
 
 # Research Questions to Answer
 * Should you buy bitcoin?
-* Technical Analysis
-* Technical Indicator 1
-* Technical Indicator 2
-* Technical indicator 3
-* On-Chain indicator 1
-* On-Chain indicator 2
-* On-Chain indicator 3
+    * Technical Analysis
+        * Technical Indicator 1
+        * Technical Indicator 2
+        * Technical indicator 3
+        * On-Chain indicator 1
+        * On-Chain indicator 2
+        * On-Chain indicator 3
 * What time horizon is least volatile?
-* Average Daily volatility
-* Average Monthly volatility
-* Average Yearly volatility
+    * Average Daily volatility
+    * Average Monthly volatility
+    * Average Yearly volatility
 * Is the risk of this investment instrument high. (Might not be able to answer this.)
 * Is it a better investment than equity or commodities
-* Compare past performance to the S&P500 and commodities like Gold/Oil
+    * Compare past performance to the S&P500 and commodities like Gold/Oil
 
 
 # Datasets to be used
@@ -37,3 +37,8 @@ For our project we will use various models and research methods to decide if Bit
 
 
 # Rough breakdown of tasks
+* Gather data for bitcoin(API?)
+* Perform technical analysis
+* Compare results to S&P500, and commodities performance
+* Make graphs and other visualization tools
+* Analyze, conclude, and answer research questions
