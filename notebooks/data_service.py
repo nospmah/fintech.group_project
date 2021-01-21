@@ -1,13 +1,10 @@
-import os
 import requests
 import pandas as pd
 import numpy as np
 from dotenv import load_dotenv
 import alpaca_trade_api as tradeapi 
 import json
-from pathlib import Path
 from datetime import date
-from datetime import timedelta
 
 def get_stock_OHLCV(api_key, secret_key, ticker, date_start, date_end, period) :
     '''
@@ -40,16 +37,15 @@ def get_stock_OHLCV(api_key, secret_key, ticker, date_start, date_end, period) :
         [ticker],
         period,
         start=start_date,
-        end=end_date
-    ).df
+        end=end_date).df
 
     # Init new DataFrame
     df = pd.DataFrame()
-    df['open'] = raw_df['SPY']['open']
-    df['high'] = raw_df['SPY']['high']
-    df['low'] = raw_df['SPY']['low']
-    df['close'] = raw_df['SPY']['close']
-    df['volume'] = raw_df['SPY']['volume']
+    df['open'] = raw_df[ticker]['open']
+    df['high'] = raw_df[ticker]['high']
+    df['low'] = raw_df[ticker]['low']
+    df['close'] = raw_df[ticker]['close']
+    df['volume'] = raw_df[ticker]['volume']
 
     # Parse date
     df['date'] = raw_df.index.date
@@ -79,7 +75,8 @@ def get_crypto_OHLCV(api_key, ticker, date_start, date_end, period) :
                     DateFrame with columns: ['date','open','high','low','close','volume']
     '''
     # CoinAPI.io REST url for historical OHLCV
-    url = f'https://rest.coinapi.io/v1/ohlcv/{ticker}/USD/history?apikey={api_key}&period_id={period}&time_start={date_start}&time_end={date_end}&limit=100000'
+    # url = f'https://rest.coinapi.io/v1/ohlcv/{ticker}/USD/history?apikey={api_key}&period_id={period}&time_start={date_start}&time_end={date_end}&limit=100000'
+    url = f'https://rest.coinapi.io/v1/ohlcv/{ticker}/USD/history?apikey={api_key}&period_id={period}&time_start={date_start}&time_end={date_end}&limit=100'
     
     # List of dictionary objects
     results = requests.get(url).json()
@@ -103,3 +100,20 @@ def get_crypto_OHLCV(api_key, ticker, date_start, date_end, period) :
         inplace = True)
 
     return df
+
+
+def get_pct_chg_for_OHLCV(ohlcv_data) :
+    '''
+    Helper method to convert OHLCV data to pct_chg.
+
+            Parameters:
+                    ohlcv_data (DataFrame): OHLCV data (from methods above)
+
+            Returns:
+                    DateFrame with column: ['close']
+    '''
+    returns_df = ohlcv_data[['close']]
+    returns_df['close'] = returns_df['close'].astype('float64')
+    returns_df.index = ohlcv_data['date']
+    returns_df = returns_df.pct_change()
+    return returns_df
