@@ -119,18 +119,28 @@ def get_pct_chg_for_OHLCV(ohlcv_data) :
     return returns_df
 
 
-def get_onchain_data() :
+def get_onchain_data(access_token, ticker, fromdate, limit) :
     '''
     Returns on-chain data (Netflow)n in new df
+        Parameters:
+            access_token (string): API key
+            ticker (string) = Ticker for Desired Coin
+            fromdate (string) = Starting date of period desired
+            limit (int) = number of data points
+
+            
 
     '''
-    load_dotenv()
-    access_token = os.getenv("CQ_API_KEY")
-    headers = { 'Authorization': 'Bearer ' + access_token }
-    URL = "https://api.cryptoquant.com/v1/btc/exchange-flows/netflow?exchange=all_exchange&window=day&from=20150101"
+    #Initialize dotenv function, pull API key, build URL
+    headers = { 'Authorization': 'Bearer ' + {access_token} }
+    URL = f'https://api.cryptoquant.com/v1/{ticker}/exchange-flows/netflow?exchange=all_exchange&window=day&from={fromdate}&limit={limit}'
+
+    # Initialize Dictionary
     response = requests.get(URL, headers=headers)
     
     netflow_data = response.json()
+
+    #Transform to Dataframe and adjust data type
     netflow_df = pd.DataFrame(data=netflow_data['result']['data'])
     netflow_df['date'] = pd.to_datetime(netflow_df['date'])
     netflow_df['netflow_total'] = inflow_df['netflow_total'].astype(str).astype('float')
