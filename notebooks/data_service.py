@@ -1,7 +1,7 @@
 import requests
 import pandas as pd
 import numpy as np
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 import alpaca_trade_api as tradeapi 
 import json
 from datetime import date
@@ -117,58 +117,3 @@ def get_pct_chg_for_OHLCV(ohlcv_data) :
     returns_df.index = ohlcv_data['date']
     returns_df = returns_df.pct_change()
     return returns_df
-
-
-def get_onchain_data(access_token, ticker, fromdate, limit) :
-    '''
-    Returns on-chain data (Netflow)n in new df
-        Parameters:
-            access_token (string): API key
-            ticker (string) = Ticker for Desired Coin
-            fromdate (string) = Starting date of period desired
-            limit (int) = number of data points
-
-            
-
-    '''
-    #Initialize dotenv function, pull API key, build URL
-    headers = { 'Authorization': 'Bearer ' + {access_token} }
-    URL = f'https://api.cryptoquant.com/v1/{ticker}/exchange-flows/netflow?exchange=all_exchange&window=day&from={fromdate}&limit={limit}'
-
-    # Initialize Dictionary
-    response = requests.get(URL, headers=headers)
-    
-    netflow_data = response.json()
-
-    #Transform to Dataframe and adjust data type
-    netflow_df = pd.DataFrame(data=netflow_data['result']['data'])
-    netflow_df['date'] = pd.to_datetime(netflow_df['date'])
-    netflow_df['netflow_total'] = inflow_df['netflow_total'].astype(str).astype('float')
-    return netflow_df
-
-
-def pearsons_coefficient():
-    '''
-    Returns pearsons coefficient (int) between 2 dataframes columns.
-
-        Parameters: 
-            ## df1 (object): First DataFrame to compare
-            ## df2 (object): Second Dataframe to compare
-            ## df1_column (object): Series from df1 we wish to compare
-            ## df2_column (object): Series from df2 we wish to compare
-
-    '''
-
-    covariance = cov({df1['df1_column']},{df2['df2_column']})
-    corr, _ = pearsonr({df1['df1_column']},{df2['df2_column']})
-    print('Pearsons correlation: %.3f' % corr)
-    return corr
-
-
-
-
-
-    covariance = cov(netflow_df['netflow_total'],price_df['price_usd_close'])
-    corr, _ = pearsonr(netflow_df['netflow_total'], price_df['price_usd_close'])
-    print('Pearsons correlation: %.3f' % corr)
-    return corr
