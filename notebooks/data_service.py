@@ -57,7 +57,7 @@ def get_stock_OHLCV(api_key, secret_key, ticker, date_start, date_end, period) :
     df = df[['date','open','high','low','close','volume']]
 
     # Save to file
-    df.to_csv(f'../data/OHLCV/{ticker}_ohlcv_{date_start}-{date_end}.csv', header=None, index=None, sep=',', mode='a')
+    df.to_csv(f'../data/OHLCV/{ticker}_ohlcv_{date_start}-{date_end}_v2.csv', header=None, index=None, sep=',', mode='a')
 
     return df
 
@@ -102,7 +102,7 @@ def get_crypto_OHLCV(api_key, ticker, date_start, date_end, period) :
         inplace = True)
 
     # Save to file
-    df.to_csv(f'../data/OHLCV/{ticker}_ohlcv_{date_start}-{date_end}.csv', header=None, index=None, sep=',', mode='a')
+    df.to_csv(f'../data/OHLCV/{ticker}_ohlcv_{date_start}-{date_end}_v2.csv', header=None, index=None, sep=',', mode='a')
 
     return df
 
