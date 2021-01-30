@@ -26,27 +26,29 @@ We are taking a two pronged appraoch to this analysis: <br>
 **Should you buy bitcoin, historically?**<br><br/>
 What would a $x.xx investment be worth today had we invested it in a series of different asset classes over x period of time. 
 <br><br/>
-**Historical Analysis**
 
-We used a Monte Carlo Simulation on the following to compare:
+**Historical Analysis** -
+
+We used a Monte Carlo Simulation on the following to compare: 
 * SPY (S&P 500)
 * GLD (Gold)
 * ETH (Ethereum)
 * LTC (Litecoin)
 * XRP (Ripple)
-**Should you buy bitcoin, RIGHT NOW?**
-* Technical Analysis - On-Chain
-* Technical Analysis - Market
+
+(Brian to say something here)
 <br><br/>
 
+**Technical Analysis** -
+
 Then we decided to look at current markets and network data to understand what's happening in real time with the BTC markets. We used the following market indicators, as well as a new generations of "on-chain" indicators to analyze movement on the bitcoin network. 
-* **Technical Analysis -**
-    * On-Chain indicator 1 - Exchange Netflow (Ryan)
-    * On-Chain indicator 2 - Puell Multiple Vs Price (Max)
-    * On-Chain indicator 3 - All Exchanges Reserve vs Price (Abdul)
-    * Market Indicator 1- 21 Week MA (Abdul)
-    * Market indicator 2 - MVRV Z-Score (Ryan)
-    * Market indicator 3 -  Standard Deviation (Brian/Max)
+
+* On-Chain indicator 1 - Exchange Netflow (Ryan)
+* On-Chain indicator 2 - Puell Multiple Vs Price (Max)
+* On-Chain indicator 3 - All Exchanges Reserve vs Price (Abdul)
+* Market Indicator 1- 21 Week MA (Abdul)
+* Market indicator 2 - MVRV Z-Score (Ryan)
+* Market indicator 3 -  Standard Deviation (Brian/Max)
 
 ## Final outcome: 
 ---
@@ -66,4 +68,5 @@ We concluded that right now, an investment of $10,000 would result in a range of
 * [CryptoQuant](cryptoquant.com)
 * [Alpaca SDK](alpaca.com)
 * [Open API](openapi.io)
+
 
