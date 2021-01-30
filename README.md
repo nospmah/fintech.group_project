@@ -31,19 +31,30 @@
 For our project we will use various models and research methods to decide if Bitcoin is a good investment at this time and over what period.
 <p>
 
-**Historical Analysis** -
+**Historical Analysis**
 
-We used a Monte Carlo Simulation on the following to compare: 
+We compared Bitcoin to the following benchmark assets:
 * SPY (S&P 500)
 * GLD (Gold)
 * ETH (Ethereum)
 * LTC (Litecoin)
 * XRP (Ripple)
 
-(Brian to say something here)
+### Standard Deviation
+
+There were to particularly deep insights with respect to standard deviation; Bitcoin deviates more than GLD and SPY by a fair margin but much less than the other crypto assets we compared.
+
+### Cumulative Returns
+
+Bitcoin was definitely the winner in 2020 with respect to cumulative returns
+
+### Monte Carlo Simulation
+
+There is a 95% chance that an initial investment of $10,000 in the portfolio over the next 5 years will end within in the range of $11324.42 and $3050996.83
+
 <br><br/>
 
-**Technical Analysis** -
+**Technical Analysis** 
 
 Then we decided to look at current markets and network data to understand what's happening in real time with the BTC markets. We used the following market indicators, as well as a new generations of "on-chain" indicators to analyze movement on the bitcoin network. 
 
