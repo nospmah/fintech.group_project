@@ -59,7 +59,13 @@ There is a 95% chance that an initial investment of $10,000 in the portfolio ove
 Then we decided to look at current markets and network data to understand what's happening in real time with the BTC markets. We used the following market indicators, as well as a new generations of "on-chain" indicators to analyze movement on the bitcoin network. 
 
 * On-Chain indicator 1 - Exchange Netflow (Ryan)
+    
 * On-Chain indicator 2 - Puell Multiple Vs Price (Max)
+    
+This metric looks as the supply side of Bitcoin's economy and highlights the beginning and ending of market cycles. It takes into account bitcoin miners, their revenue, as well as their need to cover fixed cost; so in theory the revenue they generate, should influence price over time. More specifically, the puell multiple is calculated by dividing the daily issuance of value of bitcoin by the 365-day moving average of daily issuance value.
+    * How is the Puell Multiple used?
+As we have discussed earlier, this asset is prone to fairly extremem swings and a result there are periods of time where the value of bitcoins being mined and entering the market is too high or too low compared to historical norms. But by visualizing the puell multiple along with the price of Bitcoin, Bitcoin investors can better understand these high and low periods and capitalize their investments by selling when Puell multiple reaches the 'sell zone'(around 4 or higher) and buying when the Puell Multiple reaches the "buy zone"(0.3 to 0.5). Historically, each time the Puell Multiple has dropped into the "buy zone", Bitcoin investors who bought here obained an average return of 5,000%.
+    
 * On-Chain indicator 3 - All Exchanges Reserve vs Price (Abdul)
 * Market Indicator 1- 21 Week MA (Abdul)
 * Market indicator 2 - MVRV Z-Score (Ryan)
