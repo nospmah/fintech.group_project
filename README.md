@@ -59,6 +59,7 @@ There is a 95% chance that an initial investment of $10,000 in the portfolio ove
 Then we decided to look at current markets and network data to understand what's happening in real time with the BTC markets. We used the following market indicators, as well as a new generations of "on-chain" indicators to analyze movement on the bitcoin network. 
 
 * On-Chain indicator 1 - Exchange Netflow (Ryan)
+    * Used as an indicator of overall market sentiment towards to long term viability and belief in the asset as a store of value. More money entering exchanges signals a selling, more money leaving the exchanges indicates holding patterns. 
     
 * On-Chain indicator 2 - Puell Multiple Vs Price (Max)
     
@@ -73,6 +74,7 @@ As we have discussed earlier, this asset is prone to fairly extremem swings and 
     *  As the name implies, the 21 week moving average takes the mean of the weekly closing prices for bitcoin over the last 21 weeks. Historical it has proven very accurate for predicting buying and selling points. The 21 week moving average serves as a resistance line to spot bull runs. Typically when the price of bitcoin surpasses the 21 week moving average, it signals a bull run. Over time the 21 week moving average will also increase and the convergence of the two signals the end of the bull run which indicates a selling point. Currently the price of bitcoin is well above it’s 21 week moving average, which indicates the price will fall to meet the 21 week moving average.
 
 * Market indicator 2 - MVRV Z-Score (Ryan)
+    * Taking the overall market cap and dividing it by realized value, or the value that a specific asset was bought/sol for and calculating it's value. A high or low score can indicate and overbought/oversold sentiment. 
 * Market indicator 3 -  Standard Deviation (Brian/Max)
 <p>
 
